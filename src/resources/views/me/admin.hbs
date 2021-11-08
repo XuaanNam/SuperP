@@ -1,0 +1,38 @@
+        {{> header-admin}}  
+
+<div class="container">
+        <div class="col-sm-6">
+                <div class="row mt-3 bl">
+                        <div>
+                                <a href="/me/link/new">
+                                        Create new link !
+                                </a>   
+                        </div>
+                        
+                </div>
+                <div class="bl row">
+                        <div class=" admin-box mt-3">
+                                <form action="/me/link/stored" method="post">
+                                        <input class="inputt" type="text" placeholder="Title" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Title'" ;/> 
+                                        <input class="inputt" type="text" placeholder="Url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Url'" />         
+                                </form>
+                                <div class="action d-flex">
+                                        <div>
+                                                <a href="">Clear</a>
+                                        </div>
+                                        <div>
+                                                <a href="">
+                                                        <img src="image/trash-sharp.svg" width="20" height="30" alt="">    
+                                                </a>        
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+</div>
+
+

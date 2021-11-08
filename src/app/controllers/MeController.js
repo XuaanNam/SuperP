@@ -3,19 +3,11 @@ const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
     // [GET] /
-    index(req, res, next) {
-        User.find({})
-            .then((user) => {
-                res.render('me/profile', {
-                    user: mutipleMongooseToObject(user),
-                });
-            })
-            .catch(next);
-    }
+    index(req, res, next) {}
 
-    //[GET] /search
-    search(req, res) {
-        res.send('search');
+    //[GET] /me/admin
+    admin(req, res, next) {
+        res.render('me/admin');
     }
 }
 
