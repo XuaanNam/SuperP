@@ -1,0 +1,21 @@
+<img class="theme-link" src="./image/link_theme.jpg" alt="" width="" height="">
+<div class="form-link">
+    <div class="pt-5">
+        <img class="theme-user" src="./image/user.png" alt="" width="100" height="100">
+    </div>
+    <div class="user-name pt-3 text-center">
+        <b>{{fullname}}</b>
+    </div>
+    <div class="d-grid gap-4 col-6 mx-auto pt-4">
+        {{#each link.linkNumber}}
+            <a href="{{url}}">
+                <button class="btn-ljnk" type="button">{{title}}</button>
+            </a>
+        {{/each}}
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <a class="foot-user-info" href="/">
+        <img src="./image/logo.svg" alt="" width="130" height="50">
+    </a>
+</div>

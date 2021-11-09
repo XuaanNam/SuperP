@@ -1,0 +1,57 @@
+       
+<img class="admin-image" src="/image/admin-add.png" alt="image">
+    
+<div class="gridview">
+        <div class="backgr-admin-page"></div>
+        <div> {{> header-admin}}  </div>
+        
+        <div class="add-form">
+                <div class="pt-3 pb-3">
+                        <b style="font-size:18px; padding-right:10px"> Your link: </b>
+                        <a href="/{{slug}}" style="color: rgb(255, 0, 200); font-size:18px;">superp.com/{{slug}}</a>
+                </div>
+                <div class="workspace">
+                        <div class="admin-box mt-3">
+                                <form action="/me/link/stored?_method=put" id="form-links" method="post" class="needs-validation" novalidate>
+                                        <input class="inputt form-control" id="title" name="title" 
+                                                type="text" placeholder="Title" onfocus="this.placeholder = ''" 
+                                                onblur="this.placeholder = 'Title'" required/> 
+                                        <input class="inputt form-control" type="text" id="url" name="url" 
+                                                placeholder="Url" onfocus="this.placeholder = ''" 
+                                                onblur="this.placeholder = 'Url'" required/>         
+
+                                        <div class="action">
+                                                <div>
+                                                        <button type="submit">
+                                                                <b>Add</b style="margin-right:20px !important;">
+                                                                <img src="image/plus-circle-fill.svg" width="20" height="30" alt=""> 
+                                                        </button>                                                         
+                                                </div>
+                                        </div>
+                                </form>
+
+                        </div>
+                        
+                </div>
+        </div>
+</div>
+<script>
+(function () {
+  'use strict'
+
+  var forms = document.querySelectorAll('.needs-validation')
+
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+

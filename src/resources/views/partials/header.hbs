@@ -7,12 +7,24 @@
       </a>
       <a href="/about-us" style="font-size:20px !important;" class="nav-link font-italic mt-2">About us</a>
     </div>
-    <div class="pull-right" id="navbarNavAltMarkup">
-      <a href="/login">
-        <button type="button" class="btn btn-outline-success">Sign in</button></a>
-      <a href="/register"> 
-        <button type="button" class="btn btn-outline-info">Sign up</button>
-      </a>       
-    </div>
+
+    {{#if status.isntlogin}}
+      <div class="pull-right" id="">
+        <a href="/login">
+          <button type="button" class="btn btn-outline-success">Sign in</button></a>
+        <a href="/register"> 
+          <button type="button" class="btn btn-outline-info">Sign up</button>
+        </a>       
+      </div>
+    {{/if}}
+
+    {{#if status.islogin}}
+      <div class="pull-right" id="">
+        <a href="/me/admin">
+          <button type="button" class="btn btn-outline-success"> <span class="oi oi-fire"></span>Admin </button>
+        </a>      
+      </div>
+    {{/if}}
+
   </div>
 </nav>

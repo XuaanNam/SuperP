@@ -1,17 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light header-admin">
   <div class="container-fluid">
     
-    <div class="d-flex">
+    <div class="class-logo">
       <a class="navbar-brand" href="/">
         <img src="./image/logo.svg" alt="" width="120" height="50" class="d-inline-block align-text-top">         
       </a>
-      <a href="/about-us" style="font-size:20px !important;" class="nav-link font-italic mt-2">About us</a>
     </div>
-    <div class="pull-right" id="navbarNavAltMarkup">
-      <a href="/me/logout">
-        <button type="button" class="btn btn-outline-success">Logout</button></a>
+    {{#if status.iscreate}}
+      <ul class="nav nav-tabs">
+        <li class="nav-item active">
+          <a class="nav-link active" aria-current="page" href="/me/admin">Create new link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/me/manage">Manage</a>
+        </li>
+      </ul>
       
+    {{/if}}
+
+    {{#if status.ismanage}}
+      <ul class="nav nav-tabs">
+        <li class="nav-item ">
+          <a class="nav-link " aria-current="page" href="/me/admin">Create new link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/me/manage">Manage</a>
+        </li>
+      </ul>
+    {{/if}}
+
+    <div class="pull-right d-flex" id="navbarNavAltMarkup">
+      <div style="width: 20vw; margin-right:30px; text-align:right">
+         <h3>{{username}}</h3>
+      </div>
      
+      <a href="/me/logout">
+        <button type="button" class="btn btn-outline-success"><span class="oi oi-account-login"></span></button>
+      </a>    
     </div>
   </div>
 </nav>

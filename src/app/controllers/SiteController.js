@@ -1,10 +1,23 @@
 const User = require('../models/User');
-const { mutipleMongooseToObject } = require('../../util/mongoose');
+const Link = require('../models/Link');
+const { mongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
     // [GET] /
     index(req, res, next) {
-        res.render('home');
+        if (req.cookies.id) {
+            res.render('home', {
+                status: {
+                    islogin: true,
+                },
+            });
+        } else {
+            res.render('home', {
+                status: {
+                    isntlogin: true,
+                },
+            });
+        }
     }
 
     //[GET] /about-us
@@ -19,11 +32,14 @@ class SiteController {
 
     //[POST] /register/stored
     stored(req, res, next) {
-        console.log(req.body);
         const user = new User(req.body);
-        console.log(user);
         user.save()
-            .then(() => res.redirect('/login'))
+            .then(() => {
+                const link = new Link({
+                    OwnerBy: user._id,
+                });
+                link.save().then(() => res.redirect('/login'));
+            })
             .catch(next);
     }
 
@@ -39,9 +55,38 @@ class SiteController {
             err: error,
         });
     }
-    //[GET] /login/check
+    //[POST] /login/check
     loginCheked(req, res, next) {
         res.redirect('/me/admin');
+    }
+
+    //[GET] /eror
+    error(req, res, next) {
+        res.render('site/error404');
+    }
+
+    //[GET] /:slug
+    info(req, res, next) {
+        var slug = req.params.slug;
+        User.findOne({ slug: slug })
+            .then((user) => {
+                mongooseToObject(user);
+                if (user === null) {
+                    res.render('site/user-not-found', {
+                        fullname: 'Your full name is here',
+                    });
+                } else {
+                    Link.findOne({ OwnerBy: user._id })
+                        .then((link) => {
+                            res.render('site/info', {
+                                link: mongooseToObject(link),
+                                fullname: user.fullName,
+                            });
+                        })
+                        .catch(next);
+                }
+            })
+            .catch(next);
     }
 }
 

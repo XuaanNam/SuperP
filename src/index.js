@@ -7,7 +7,9 @@ const morgan = require('morgan');
 const db = require('./config/db');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
 
+app.use(cookieParser());
 app.use(morgan('combined'));
 
 app.use(express.json());
