@@ -1,13 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
 const route = require('./routes');
 const morgan = require('morgan');
 const db = require('./config/db');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+
+var port = process.env.PORT || '3000';
+app.set('port', port);
 
 app.use(cookieParser());
 app.use(morgan('combined'));
