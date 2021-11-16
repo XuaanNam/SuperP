@@ -29,8 +29,10 @@
   "homepage": "https://github.com/XuaanNam/SuperP#readme",
   "dependencies": {
     "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
+    "forever": "^4.0.1",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.12",
     "mongoose-delete": "^0.5.4",

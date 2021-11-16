@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 
 var port = process.env.PORT || '3000';
 app.set('port', port);
+require('dotenv').config();
 
 app.use(cookieParser());
 app.use(morgan('combined'));
@@ -24,29 +25,6 @@ app.engine(
     'hbs',
     handlebars({
         extname: '.hbs',
-        heppers: {
-            sum: (a, b) => a + b, //ở đây ta định nghĩa hàm sum để sử dụng
-
-            sortable: (field, sort) => {
-                const sortType = field === sort.column ? sort.type : 'default';
-                const icons = {
-                    default: 'oi oi-elevator',
-                    asc: 'oi oi-sort-ascending',
-                    desc: 'oi oi-sort-descending',
-                };
-                const types = {
-                    default: 'desc',
-                    asc: 'desc',
-                    desc: 'asc',
-                };
-                const icon = icons[sortType];
-                const type = types[sort.type];
-                return `<a href="?_sort&column=${field}&type=${type}">
-                            
-                        <span class="${icon}"></span>
-                            </a>`;
-            },
-        },
     })
 );
 app.set('view engine', 'hbs');
