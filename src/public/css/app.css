@@ -221,13 +221,13 @@ input:focus {
   z-index: 2;
   top: 0;
   right: 0;
-  border-top: 6px solid #a8ced3;
-  border-right: 7px solid #a8ced3;
+  box-sizing: border-box;
+  border-top: 2px solid #a8ced3;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px; }
 
 .header-admin ul {
-  margin-right: 8vw; }
+  margin-right: 5vw; }
 
 .add-form {
   box-sizing: border-box;
@@ -396,7 +396,7 @@ input:focus {
 
 .theme-link {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   z-index: 1; }
 
