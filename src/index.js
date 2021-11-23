@@ -8,6 +8,7 @@ const db = require('./config/db');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 var port = process.env.PORT || '3000';
 app.set('port', port);
