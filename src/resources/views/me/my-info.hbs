@@ -1,0 +1,41 @@
+       
+<img class="admin-image" src="/image/admin-manage.png" alt="image">
+    
+<div class="gridview">
+    <div class="backgr-admin-page"></div>
+    <div> {{> header-admin}}  </div>
+    
+    <div class="add-form">
+            <div class="pt-3 pb-3">
+                    <b style="font-size:18px; padding-right:10px"> Your link: </b>
+                    <a href="/{{user.slug}}" style="color: rgb(255, 0, 200); font-size:18px;">superp.com/{{slug}}</a>
+            </div>
+            <div class="workspace">
+                    <div class="info-box mt-3">
+                        <form  action="/me/info/update?_method=patch" id="form-links" method="post" >
+                            <div class="d-flex info-input">
+                                <input placeholder="Email:" disabled/> 
+                                <input value="{{user.email}}" disabled/> 
+                            </div> 
+                            <div class="d-flex info-input">
+                                <input placeholder="Usename:" disabled/> 
+                                <input id="userName" name="userName" value="{{user.userName}}" type="text" />
+                            </div> 
+                            <div class="d-flex info-input">
+                                <input placeholder="Password:" disabled/> 
+                                <input id="password" name="password" value="{{user.password}}" type="password"/>
+                            </div> 
+                            <div class="action">
+                                    <div class="d-flex">
+                                            <button type="submit">
+                                                    <b>Update</b>
+                                                    <span class="oi oi-cloud-upload"></span>
+                                            </button>                                                          
+                                    </div>
+                            </div> 
+                        </form>
+                    </div>                       
+            </div>
+    </div>
+</div>
+

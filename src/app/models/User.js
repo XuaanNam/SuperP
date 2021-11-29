@@ -7,7 +7,6 @@ mongoose.plugin(slug);
 const User = new Schema(
     {
         userName: { type: String },
-        fullName: { type: String, maxlength: 255 },
         email: { type: String },
         image: { type: String, default: 'resources/images/' },
         password: { type: String },

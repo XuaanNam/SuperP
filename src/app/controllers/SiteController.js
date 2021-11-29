@@ -27,7 +27,17 @@ class SiteController {
 
     //[GET] /register
     register(req, res, next) {
-        res.render('site/register');
+        var err = req.query.err;
+        var error = null;
+        if (err == 1) {
+            error = 'Email đã tồn tại, vui lòng chọn email khác!';
+        } else if (err == 2) {
+            error =
+                'Tên người dùng đã tồn tại, vui lòng chọn tên người dùng khác!';
+        }
+        res.render('site/register', {
+            err: error,
+        });
     }
 
     //[POST] /register/stored
@@ -41,12 +51,31 @@ class SiteController {
                 link.save().then(() => res.redirect('/login'));
             })
             .catch(next);
+        // User.findOne({ emai: req.body.email }).then((link) => {
+        //     if(mongooseToObject(link).userName){
+        //         res.redirect('/register?err=1');
+        //     } else {
+        //         User.findOne({ userName: req.body.userName }).then((link) => {
+        //             if(mongooseToObject(link).email){
+        //                 res.redirect('/register?err=2');
+        //             } else {
+        //                 user.save()
+        //                     .then(() => {
+        //                         const link = new Link({
+        //                             OwnerBy: user._id,
+        //                         });
+        //                         link.save().then(() => res.redirect('/login'));
+        //                     })
+        //                     .catch(next);
+        //             }
+        //         }).catch(next)
+        //     }
+        // }).catch(next);
     }
 
     //[GET] /login
     login(req, res, next) {
         var err = req.query.err;
-        console.log(err);
         var error = null;
         if (err == 1) {
             error = ' Username or Password is incorrect!';

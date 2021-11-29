@@ -163,7 +163,7 @@ section {
 .inputt:focus {
   cursor: auto; }
 
-.inputt::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   font-weight: bold; }
 
 textarea:focus,
@@ -181,15 +181,15 @@ input:focus {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
   border: solid 1px #32cdd7;
   background: #69d1d8;
   color: black;
   border-radius: 20px;
-  text-decoration: none; }
+  margin: 0 20px;
+  text-decoration: none;
+  height: 40px; }
 
 .action div {
-  width: 55%;
   padding: 10px 22px; }
 
 .admin-image {
@@ -227,7 +227,7 @@ input:focus {
   border-bottom-left-radius: 40px; }
 
 .header-admin ul {
-  margin-right: 5vw; }
+  margin-right: 3vw; }
 
 .add-form {
   box-sizing: border-box;
@@ -275,7 +275,7 @@ input:focus {
   width: 100%;
   height: 100%; }
 
-#form-links input {
+.admin-box #form-links input {
   background-color: #dfdfdf;
   border-radius: 50px;
   border: none;
@@ -286,7 +286,7 @@ input:focus {
 #form-links {
   padding: 10px 0 8px 0; }
 
-#form-links img {
+#form-links img, #form-links .action button span {
   margin-left: 10px; }
 
 .class-logo {
@@ -434,3 +434,36 @@ input:focus {
 
 .user-name {
   color: #fff; }
+
+/*--------------------admin info */
+.info-box {
+  width: 100%;
+  height: auto;
+  border: 1px solid;
+  border-radius: 50px; }
+
+.info-box .action div button {
+  height: 40px;
+  margin: 0 100px; }
+
+.info-box #form-links .info-input :first-child {
+  background-color: #dfdfdf;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border: none;
+  padding: 10px 0 10px 10px;
+  margin: 10px 0 10px 20px;
+  width: 27%; }
+
+.info-box #form-links .info-input :last-child {
+  background-color: #dfdfdf;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: none;
+  padding: 10px 10px 10px 0;
+  margin: 10px 20px 10px 0;
+  width: 90%; }
+
+#btn-create {
+  width: 50%;
+  margin-left: 0; }

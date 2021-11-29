@@ -22,7 +22,7 @@
 
                                         <div class="action">
                                                 <div>
-                                                        <button type="submit">
+                                                        <button type="submit" id="btn-create">
                                                                 <b>Add</b style="margin-right:20px !important;">
                                                                 <img src="image/plus-circle-fill.svg" width="20" height="30" alt=""> 
                                                         </button>                                                         
@@ -36,22 +36,22 @@
         </div>
 </div>
 <script>
-(function () {
-  'use strict'
+        (function () {
+        'use strict'
 
-  var forms = document.querySelectorAll('.needs-validation')
+        var forms = document.querySelectorAll('.needs-validation')
 
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+        Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+                form.classList.add('was-validated')
+        }, false)
+        })
+        })()
 </script>
 

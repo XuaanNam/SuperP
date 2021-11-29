@@ -9,10 +9,12 @@ const Link = new Schema(
         },
         linkNumber: [
             {
+                id: Number,
                 title: String,
                 url: String,
             },
         ],
+        maxId: { type: Number, default: 1, index: true },
     },
     {
         timestamps: true,
