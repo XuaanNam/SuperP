@@ -8,6 +8,7 @@ const db = require('./config/db');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+const favicon = require('serve-favicon');
 require('dotenv').config();
 
 var port = process.env.PORT || '3000';
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use(morgan('combined'));
 app.use(compression());
 app.use(express.json());
+app.use(favicon(path.join(__dirname, 'public', 'image', 'favicon.ico')));
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
