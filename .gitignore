@@ -1,3 +1,4 @@
 node_modules
 src/resources/scss/
 .env
+.nodemon
