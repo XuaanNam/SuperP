@@ -28,7 +28,7 @@ Thành viên nhóm gồm:<br>
 Nguyễn Xuân Nam     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      19110243<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  19110164<br>
+Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  19110164<br><br><br>
 
 
-  
+<b>FILE HƯỚNG DẪN CÁCH DEPLOY VÀ CONFIGURE PORT TỤI EM ĐÍNH KÈM PHÍA TRÊN (File Nhom22_Amazon LightSail.pdf) <b>
