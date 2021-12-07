@@ -5,7 +5,7 @@ const err500Middleware = require('../app/middlewares/Error500Middleware');
 function route(app) {
     app.use('/me', meRouter);
     app.use('/', siteRouter);
-    //app.use(err404Middleware, err500Middleware);
+    app.use(err404Middleware, err500Middleware);
 }
 
 module.exports = route;
