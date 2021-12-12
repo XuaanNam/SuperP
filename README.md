@@ -112,7 +112,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   ### `Bước 1`
   
-  - Kết nối ssh tới máy chủ\
+  - Kết nối ssh tới máy chủ
   
   - Dùng `sudo su` để được cấp quyền cao nhất – `root`
   
@@ -151,6 +151,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   - Tạo một người dùng cho phép toàn quyền truy cập vào database theo cú pháp: 
  
+ ```js
     db.createUser(
       {
         user: "username",
@@ -158,6 +159,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
         roles: ["readWrite", "dbAdmin"]
       } 
     )
+  ```
   
   - Thoát khỏi trình quản lí `MongoDB` bằng lệnh `exit`
   
