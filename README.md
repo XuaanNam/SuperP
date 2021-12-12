@@ -33,7 +33,15 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 
 
 # HƯỚNG DẪN TRIỂN KHAI VÀ CẤU HÌNH MÁY CHỦ TRÊN AMAZON LIGHTSAIL
-
+  
+  ## Mục lục
+  
+  - [Khởi tạo một phiên bản](#Khởi tạo một phiên bản)
+  - [Thiết lập IP tĩnh](#Thiết lập IP tĩnh)
+  - [Tạo thêm port](#Tạo thêm port)
+  - [Kết nối ssh](#Kết nối ssh)
+  - [Triển khai ứng dụng](#Triển khai ứng dụng)
+  
   ## Khởi tạo một phiên bản
   
   ### `Tạo phiên bản`
@@ -68,7 +76,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   `SSH Key` là một phương thức xác thực đăng nhập với máy chủ thông qua truy cập SSH bằng việc đối chiếu giữa một cặp key, bao gồm một key cá nhân (`private key`) và key công khai (`public key`)
   
-  `Private key` và `Public key` có mối liên hệ chặt chẽ với nhau nhằm mục đích nhận diện lẫn nhau. Chúng ta có thể tạo key riêng cho mình, ở đây được dùng mặc định như bên dưới và nhấn `download`
+  `Private key` và `Public key` có mối liên hệ chặt chẽ với nhau nhằm mục đích nhận diện lẫn nhau. Chúng ta có thể tạo `key riêng` cho mình, ở đây được dùng `key` mặc định và nhấn `download`
   
   ### `Chọn cấu hình cho máy chủ`
   
@@ -80,7 +88,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   Đặt tên cho ứng dụng là `clouds-superP` và nhấn vào nút `Create instance`
   
-  ## `Thiết lập IP tĩnh`
+  ## Thiết lập IP tĩnh
   
   Chọn mục `Networking` và nhấp vào nút `Create static IP` trong [trang chủ](https://lightsail.aws.amazon.com/ls/webapp/home/instances)
   
@@ -88,13 +96,13 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   Đặt tên cho IP tĩnh là `staticIp-superP` và nhấn nút `Create`
   
-  ## `Tạo thêm port`
+  ## Tạo thêm port
   
   Vì ứng dụng của bọn em lắng nghe trên `port 3000`, nên ta sẽ mở thêm một `port 3000` cho máy chủ
   
   Trong trang quản lý của `clouds-superP`, nhấn vào nút `Add rule` trong mục `Networking` để thêm một port 3000
   
-  ## `Kết nối ssh`
+  ## Kết nối ssh
   
   ### `Kết nối trên trình duyệt`
   
@@ -108,7 +116,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   Ta kết nối với máy chủ trên CMD bằng dòng lệnh: `ssh -i LightsailDefaultKey-us-east-1.pem bitnami@35.170.130.161` 
   
-  ## `Triển khai ứng dụng`
+  ## Triển khai ứng dụng
   
   ### `Bước 1`
   
