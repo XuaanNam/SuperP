@@ -36,11 +36,11 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   ## Mục lục
   
-  - [Khởi tạo một phiên bản](#Khởi tạo một phiên bản)
-  - [Thiết lập IP tĩnh](#Thiết lập IP tĩnh)
-  - [Tạo thêm port](#Tạo thêm port)
-  - [Kết nối ssh](#Kết nối ssh)
-  - [Triển khai ứng dụng](#Triển khai ứng dụng)
+  - [Khởi tạo một phiên bản](#Khởi-tạo-một-phiên-bản)
+  - [Thiết lập IP tĩnh](#Thiết-lập-IP-tĩnh)
+  - [Tạo thêm port](#Tạo-thêm-port)
+  - [Kết nối ssh](#Kết-nối-ssh)
+  - [Triển khai ứng dụng](#Triển-khai-ứng-dụng)
   
   ## Khởi tạo một phiên bản
   
