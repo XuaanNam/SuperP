@@ -146,6 +146,20 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   - Sau đó dùng trình chỉnh sửa vi: `sudo vi SuperP-vhost.conf` truy cập vàp file `SuperP-vhost.conf`, sửa mục `DocumentRoot` với đường dẫn ứng dụng mà ta sẽ đặt trên máy chủ này, tương tự với thẻ `<Directory “//”>`
   
   - Tiếp tục thay đổi số `port` ở cuối dòng `ProxyPass` và `ProxyPassReverse` thành `port` mà ứng dụng sẽ lắng nghe
+
+```js
+<VirtualHost 127.0.0.1:80 _default_:80>
+  ServerAlias *
+  DocumentRoot /home/bitnami/SuperP/src
+  <Directory "/home/bitnami/SuperP/src">
+    Options -Indexes +FollowSymLinks -MultiViews
+    AllowOverride All
+    Require all granted
+  </Directory>
+  ProxyPass / http://localhost:3000/
+  ProxyPassReverse / http://localhost:3000/
+</VirtualHost>
+```
   
   - Truy cập vào file `SuperP-https-vhost.conf` bằng lệnh: `sudo vi SuperP-https-vhost.conf`, làm tương tự để cấu hình cho giao thức `HTTPS`
   
@@ -199,21 +213,3 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   ### Link trang web http://35.170.130.161
   
-  
-
-  
-
-  
-
-  
-
-
-  
-  
-  
-
-  
-  
-  
-
-
