@@ -21,7 +21,7 @@ Học phần: Điện toán đám mây (3 tín chỉ)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Tìm hiểu về Amazon Lightsail\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Tạo ứng dụng minh họa     
 
-Đồ án được hướng dẫn bởi thầy Huỳnh Xuân Phụng\
+Đồ án được hướng dẫn bởi thầy Huỳnh Xuân Phụng
 
 Thành viên nhóm gồm:\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -32,12 +32,13 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 
 
 
-# HƯỚNG DẪN CÁCH DEPLOY VÀ CONFIGURE PORT TRÊN AMAZON LIGHTSAIL
+# HƯỚNG DẪN TRIỂN KHAI VÀ CẤU HÌNH MÁY CHỦ TRÊN AMAZON LIGHTSAIL
+
   ## Khởi tạo một phiên bản
   
   ### `Tạo phiên bản`
   
-  Chọn nút `Create instance` trong tab `Instances` của [trang chủ](https://lightsail.aws.amazon.com/ls/webapp/home/instances)
+  Chọn nút `Create instance` trong tab `Instances` trên [trang chủ LightSail](https://lightsail.aws.amazon.com/ls/webapp/home/instances)
   
   ### `Chọn khu vực`
   
@@ -55,9 +56,9 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   Các ứng dụng có sẵn có thể kể đến là `WordPress`, `LAMP (PHP 7)`, `Node.js`, `Joomla`, `Magento`, `MEAN`, `Drupal`...
   
-  Trong dự án này, nhóm em chọn ứng dụng MEAN
+  Trong dự án này, nhóm em chọn ứng dụng `MEAN`
   
-  ### `Các tùy chọn`
+  ### `Các tùy chọn khác`
   
   #### `Launch script`
   
@@ -65,7 +66,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   #### `SSH Key`
   
-  `SSH Key` là một phương thức xác thực đăng nhập với máy chủ thông qua truy cập SSH bằng việc đối chiếu giữa một cặp key, bao gồm một key cá nhân (`private key`) và key công khai (`public key`)\
+  `SSH Key` là một phương thức xác thực đăng nhập với máy chủ thông qua truy cập SSH bằng việc đối chiếu giữa một cặp key, bao gồm một key cá nhân (`private key`) và key công khai (`public key`)
   
   `Private key` và `Public key` có mối liên hệ chặt chẽ với nhau nhằm mục đích nhận diện lẫn nhau. Chúng ta có thể tạo key riêng cho mình, ở đây được dùng mặc định như bên dưới và nhấn `download`
   
@@ -89,7 +90,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   ## `Tạo thêm port`
   
-  Vì ứng dụng của tụi em lắng nghe trên `port 3000`, nên ta sẽ mở thêm một `port 3000`
+  Vì ứng dụng của bọn em lắng nghe trên `port 3000`, nên ta sẽ mở thêm một `port 3000` cho máy chủ
   
   Trong trang quản lý của `clouds-superP`, nhấn vào nút `Add rule` trong mục `Networking` để thêm một port 3000
   
@@ -103,7 +104,9 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   ### `Kết nối trên CMD`
   
-  Kết nối với server trên cmd: `ssh -i LightsailDefaultKey-us-east-1.pem bitnami@35.170.130.161` với `LightsailDefaultKey-us-east-1.pem` là khóa mặc định, `bitnami` là người dùng mặc định và `35.170.130.161` là địa chỉ ip tĩnh của máy chủ
+  Với `LightsailDefaultKey-us-east-1.pem` là khóa mặc định, `bitnami` là người dùng mặc định và `35.170.130.161` là địa chỉ ip tĩnh của máy chủ
+  
+  Ta kết nối với máy chủ trên CMD bằng dòng lệnh: `ssh -i LightsailDefaultKey-us-east-1.pem bitnami@35.170.130.161` 
   
   ## `Triển khai ứng dụng`
   
@@ -147,13 +150,14 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   - Tạo một `database` mới và đặt tên là `superp` bằng lệnh: `db = db.getSiblingDB('superp')`
   
   - Tạo một người dùng cho phép toàn quyền truy cập vào database theo cú pháp: 
-      db.createUser(
-    {
-      user: "username",
-      pwd: "password",
-      roles: ["readWrite", "dbAdmin"]
-    } 
-  )
+ 
+    db.createUser(
+      {
+        user: "username",
+        pwd: "password",
+        roles: ["readWrite", "dbAdmin"]
+      } 
+    )
   
   - Thoát khỏi trình quản lí `MongoDB` bằng lệnh `exit`
   
@@ -161,7 +165,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   - Do đã thêm ứng dụng trên `github`, ta có thể clone source code về: `git clone https://github.com/XuaanNam/SuperP.git`
   
-   -Truy cập vào file `SuperP` vừa clone từ github về, dùng lệnh `npm i` để cập nhật toàn bộ modules bao gồm các thư viện liên quan của chương trình
+  - Truy cập vào file `SuperP` vừa clone từ github về, dùng lệnh `npm i` để cập nhật toàn bộ modules bao gồm các thư viện liên quan của chương trình
   
   - Dùng lệnh `cd` để thoát ra ngoài
   
@@ -183,7 +187,7 @@ Nguyễn Dương Quốc Anh   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
   
   - Ứng dụng đã được triển khai trên ip tĩnh `35.170.130.161` và mặc định port lắng nghe sẽ là `3000`
   
-  ### Link trang web http://35.170.130.161/
+  ### Link trang web http://35.170.130.161
   
   
 
